@@ -1,5 +1,5 @@
 // Конфигурация Directus
-const DIRECTUS_URL = 'https://finite-ken-correction-operate.trycloudflare.com'; // Твой URL Directus
+const DIRECTUS_URL = 'https://finite-ken-correction-operate.trycloudflare.com'; // 🔥 Убраны пробелы!
 const MENU_ENDPOINT = '/items/menu_items';
 
 // Глобальная переменная для хранения всех блюд
@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Загрузка блюд из Directus
-// Загрузка блюд из Directus
 async function loadMenuItems() {
     const loading = document.getElementById('loading');
     const menuGrid = document.getElementById('menuGrid');
@@ -24,9 +23,10 @@ async function loadMenuItems() {
 
     try {
         const token = getAuthToken();
+        const apiUrl = `${DIRECTUS_URL}${MENU_ENDPOINT}`;
 
         console.log('🔑 Token есть:', !!token);
-        console.log('📡 URL:', `${DIRECTUS_URL}${MENU_ENDPOINT}`);
+        console.log('📡 Запрос к:', apiUrl);
 
         const headers = {
             'Content-Type': 'application/json'
@@ -35,32 +35,29 @@ async function loadMenuItems() {
         if (token) {
             headers['Authorization'] = `Bearer ${token}`;
             console.log('🔐 Authorization header добавлен');
-        } else {
-            console.log('⚠️ Запрос без токена (Public)');
         }
 
-        const response = await fetch(`${DIRECTUS_URL}${MENU_ENDPOINT}`, {
+        const response = await fetch(apiUrl, {
             method: 'GET',
             headers: headers
         });
 
         console.log('📥 Status:', response.status);
 
-        // 🔍 Показываем полный ответ
-        const responseText = await response.text();
-        console.log('📄 Response:', responseText);
-
         if (!response.ok) {
+            const errorText = await response.text();
+            console.error('❌ Server error:', errorText);
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        const data = JSON.parse(responseText);
+        const data = await response.json();
         console.log('📦 Menu data:', data);
 
         allMenuItems = data.data || [];
 
+        // По умолчанию показываем все блюда или закуски
         const appetizers = allMenuItems.filter(item => item.category === 'appetizers');
-        renderMenu(appetizers);
+        renderMenu(appetizers.length > 0 ? appetizers : allMenuItems);
 
         loading.style.display = 'none';
         menuGrid.style.display = 'grid';
@@ -77,18 +74,22 @@ async function loadMenuItems() {
 function renderMenu(items) {
     const menuGrid = document.getElementById('menuGrid');
 
-    if (items.length === 0) {
-        menuGrid.innerHTML = '<p style="text-align: center; grid-column: 1/-1;">Блюда не найдены</p>';
+    if (!items || items.length === 0) {
+        menuGrid.innerHTML = '<p style="text-align: center; grid-column: 1/-1; color: var(--text-muted);">Блюда не найдены</p>';
         return;
     }
 
     menuGrid.innerHTML = items.map(item => {
-        // Формируем URL изображения
-        const imageUrl = item.image
-            ? `${DIRECTUS_URL}/assets/${item.image}`
-            : '../img/placeholder.jpg';
+        // 🔥 Безопасное получение ID картинки
+        const imageId = item.image?.id || item.image;
 
-        // Перевод категорий
+        // Формируем URL
+        const imageUrl = imageId
+            ? `${DIRECTUS_URL}/assets/${imageId}`
+            : '';
+
+        console.log(`🖼️ Блюдо "${item.name}":`, { imageId, imageUrl });
+
         const categoryNames = {
             'appetizers': 'Закуски',
             'soups': 'Супы',
@@ -99,12 +100,18 @@ function renderMenu(items) {
 
         return `
             <div class="dish-card" data-category="${item.category || 'mains'}">
-                <img src="${imageUrl}" alt="${item.name}" onerror="this.src='../img/placeholder.jpg'">
+                <img 
+                    src="${imageUrl}" 
+                    alt="${item.name || 'Блюдо'}" 
+                    loading="lazy"
+                    crossorigin="anonymous"
+                    onerror="console.error('❌ Failed to load:', this.src); this.closest('.dish-card').style.opacity='0.5';"
+                >
                 <div class="dish-info">
                     <span class="category-badge">${categoryNames[item.category] || item.category}</span>
-                    <h3>${item.name}</h3>
+                    <h3>${item.name || 'Без названия'}</h3>
                     <p>${item.description || ''}</p>
-                    <span class="dish-price">${item.price} ₽</span>
+                    <span class="dish-price">${item.price || 0} ₽</span>
                 </div>
             </div>
         `;
@@ -117,9 +124,7 @@ function setupFilters() {
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // Убираем активный класс со всех кнопок
             filterButtons.forEach(btn => btn.classList.remove('active'));
-            // Добавляем активный класс на нажатую
             button.classList.add('active');
 
             const category = button.getAttribute('data-category');
