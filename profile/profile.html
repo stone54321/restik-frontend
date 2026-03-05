@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль - Restik</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="../auth-helper.js"></script>
+</head>
+<body>
+<nav class="navbar">
+    <div class="logo">Restik</div>
+    <ul class="nav-links">
+        <li><a href="../index.html#home">Главная</a></li>
+        <li><a href="../menu/menu.html">Меню</a></li>
+        <li><a href="../index.html#about">О нас</a></li>
+        <li><a href="../booking/booking.html">Бронь</a></li>
+        <li><a href="../contact/contact.html">Контакты</a></li>
+        <li><a href="../auth/login.html" id="authLink">Профиль</a></li>
+    </ul>
+</nav>
+
+<main class="content">
+    <section id="profile">
+        <h1>Мой профиль</h1>
+        
+        <!-- Индикатор загрузки -->
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Загрузка профиля...</p>
+        </div>
+
+        <!-- Контент профиля -->
+        <div class="profile-container" id="profileContainer" style="display: none;">
+            <!-- Информация о пользователе -->
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <img id="avatarImage" src="../img/default-avatar.jpg" alt="Аватар">
+                    <button class="avatar-edit-btn" id="avatarEditBtn">Изменить</button>
+                </div>
+                <div class="profile-info">
+                    <h2 id="userName">Имя пользователя</h2>
+                    <p id="userEmail">email@example.com</p>
+                    <p id="userPhone">+7 (000) 000-00-00</p>
+                </div>
+                <div class="profile-actions">
+                    <button class="edit-profile-btn" id="editProfileBtn">Редактировать профиль</button>
+                    <button class="logout-btn" onclick="logout()">Выйти</button>
+                </div>
+            </div>
+
+            <!-- Статистика пользователя -->
+            <div class="profile-stats">
+                <h3>Моя статистика</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalReservations">0</div>
+                        <div class="stat-label">Бронирований</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalSpent">0 ₽</div>
+                        <div class="stat-label">Потрачено</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-number" id="loyaltyPoints">0</div>
+                        <div class="stat-label">Бонусные баллы</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- История бронирований -->
+            <div class="profile-section">
+                <h3>История бронирований</h3>
+                <div class="reservations-list" id="reservationsList">
+                    <!-- Бронирования будут загружены из Directus -->
+                </div>
+                <div class="empty-state" id="emptyReservations" style="display: none;">
+                    <p>У вас пока нет бронирований</p>
+                    <a href="../booking/booking.html" class="action-btn">Сделать первое бронирование</a>
+                </div>
+            </div>
+
+            <!-- Любимые блюда -->
+
+        </div>
+
+        <!-- Форма редактирования профиля -->
+        <div class="edit-profile-modal" id="editProfileModal" style="display: none;">
+            <div class="modal-content">
+                <h3>Редактировать профиль</h3>
+                <form id="editProfileForm">
+                    <div class="form-group">
+                        <label for="editName">Имя</label>
+                        <input type="text" id="editName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editEmail">Email</label>
+                        <input type="email" id="editEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editPhone">Телефон</label>
+                        <input type="tel" id="editPhone" name="phone" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="cancel-btn" id="cancelEditBtn">Отмена</button>
+                        <button type="submit" class="save-btn">Сохранить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Сообщение об ошибке -->
+        <div class="error-message" id="errorMessage" style="display: none;">
+            <p id="errorText">Не удалось загрузить профиль. Пожалуйста, попробуйте позже.</p>
+            <button class="retry-btn" onclick="loadProfile()">Попробовать снова</button>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>© 2026 Restik. Все права защищены.</p>
+</footer>
+
+<script src="profile.js"></script>
+</body>
+</html>

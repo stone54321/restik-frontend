@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restik | Искусство Вкуса</title>
+    <!-- Подключаем красивые шрифты от Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="auth-helper.js"></script>
+</head>
+<body>
+
+<!-- Навбар -->
+<nav class="navbar">
+    <div class="logo">Restik</div>
+    <ul class="nav-links">
+        <li><a href="menu/menu.html">Меню</a></li>
+        <li><a href="#about">О нас</a></li>
+        <li><a href="booking/booking.html">Бронь</a></li>
+        <li><a href="contact/contact.html">Контакты</a></li>
+        <li><a href="auth/login.html" id="authLink">Профиль</a></li>
+    </ul>
+</nav>
+
+<main class="content">
+    <!-- Секция Home -->
+    <section id="home">
+        <div class="home-text">
+            <h1>Искусство вкуса <br><span>в каждом блюде</span></h1>
+            <p>Современная европейская кухня в центре города. Уютная атмосфера, авторские рецепты и незабываемые вечера.</p>
+            <div class="home-buttons">
+                <a href="#reservation" class="btn btn-primary">Забронировать стол</a>
+                <a href="#menu" class="btn btn-outline">Смотреть меню</a>
+            </div>
+        </div>
+        
+        <div class="home-gallery">
+            <!-- Картинки выстроены в красивую сетку -->
+            <img src="img/home1.jpg" alt="Интерьер ресторана">
+            <img src="img/home2.jpg" alt="Блюдо от шефа">
+            <img src="img/home3.jpg" alt="Атмосфера вечера">
+        </div>
+    </section>
+
+    <!-- Секция About -->
+    <section id="about">
+        <div class="about-container">
+            <div class="about-text">
+                <h2 class="section-title">Традиции и инновации Restik</h2>
+                <p>Мы открылись в 2024 году с простой идеей: еда должна приносить радость. Наш шеф-повар сочетает классические техники с современными трендами, используя только фермерские продукты.</p>
+                <p>В Restik вы не просто обедаете — вы погружаетесь в атмосферу тепла и гостеприимства. Идеально для романтических ужинов, деловых встреч и семейных праздников.</p>
+                
+                <div class="about-stats">
+                    <div class="stat">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">лет опыта</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">уникальных блюд</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">свежести</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="img/chef.jpg" alt="Шеф-повар Restik">
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция Menu -->
+    <section id="menu">
+        <div class="menu-header">
+            <h2 class="section-title">Наше меню</h2>
+            <p class="menu-subtitle">Попробуйте лучшие позиции от нашего шефа</p>
+        </div>
+
+        <div class="menu-grid">
+            <!-- Карточка 1 -->
+            <div class="dish-card">
+                <img src="img/dish1.jpg" alt="Стейк Рибай">
+                <div class="dish-info">
+                    <h3>Стейк Рибай</h3>
+                    <p>Мраморная говядина зернового откорма, соус демиглас, овощи гриль</p>
+                    <span class="dish-price">2500 ₽</span>
+                </div>
+            </div>
+            <!-- Карточка 2 -->
+            <div class="dish-card">
+                <img src="img/dish2.jpg" alt="Тыквенный суп">
+                <div class="dish-info">
+                    <h3>Тыквенный суп</h3>
+                    <p>Нежный крем-суп с семечками и сливками</p>
+                    <span class="dish-price">450 ₽</span>
+                </div>
+            </div>
+            <!-- Карточка 3 -->
+            <div class="dish-card">
+                <img src="img/dish3.jpg" alt="Цезарь с креветками">
+                <div class="dish-info">
+                    <h3>Цезарь с креветками</h3>
+                    <p>Классический салат с тигровыми креветками и пармезаном</p>
+                    <span class="dish-price">890 ₽</span>
+                </div>
+            </div>
+            <!-- Карточка 4 -->
+            <div class="dish-card">
+                <img src="img/dish4.jpg" alt="Паста Карбонара">
+                <div class="dish-info">
+                    <h3>Паста Карбонара</h3>
+                    <p>Спагетти с гуанчиале, яйцом и пармезаном</p>
+                    <span class="dish-price">720 ₽</span>
+                </div>
+            </div>
+            <!-- Карточка 5 -->
+            <div class="dish-card">
+                <img src="img/dish5.jpg" alt="Фирменный лимонад">
+                <div class="dish-info">
+                    <h3>Фирменный лимонад</h3>
+                    <p>Домашний лимонад с мятой и имбирем</p>
+                    <span class="dish-price">350 ₽</span>
+                </div>
+            </div>
+            <!-- Карточка 6 -->
+            <div class="dish-card">
+                <img src="img/dish6.jpg" alt="Тирамису">
+                <div class="dish-info">
+                    <h3>Тирамису</h3>
+                    <p>Классический итальянский десерт с маскарпоне</p>
+                    <span class="dish-price">550 ₽</span>
+                </div>
+            </div>
+            
+            <a href="#" class="btn btn-primary full-menu-btn">Полное меню</a>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>© 2026 Restik. Все права защищены.</p>
+</footer>
+
+</body>
+</html>

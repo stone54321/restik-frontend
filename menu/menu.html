@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню - Restik</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="menu.css">
+    <script src="../auth-helper.js"></script>
+</head>
+<body>
+<nav class="navbar">
+    <div class="logo">Restik</div>
+    <ul class="nav-links">
+        <li><a href="../index.html">Главная</a></li>
+        <li><a href="#menu">Меню</a></li>
+        <li><a href="../index.html#about">О нас</a></li>
+        <li><a href="../booking/booking.html">Бронь</a></li>
+        <li><a href="../contact/contact.html">Контакты</a></li>
+        <li><a href="../profile/profile.html" id="authLink">Профиль</a></li>
+    </ul>
+</nav>
+
+<main class="content">
+    <section id="menu">
+        <h1>Наше меню</h1>
+        <p class="menu-subtitle">Попробуйте лучшие позиции от нашего шефа</p>
+
+        <!-- Фильтры категорий -->
+        <div class="category-filters">
+            <button class="filter-btn active" data-category="appetizers">Закуски</button>
+            <button class="filter-btn" data-category="soups">Супы</button>
+            <button class="filter-btn" data-category="mains">Основные блюда</button>
+            <button class="filter-btn" data-category="desserts">Десерты</button>
+            <button class="filter-btn" data-category="drinks">Напитки</button>
+        </div>
+
+        <!-- Индикатор загрузки -->
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Загрузка меню...</p>
+        </div>
+
+        <!-- Контейнер для блюд -->
+        <div class="menu-grid" id="menuGrid">
+            <!-- Блюда будут загружены из Directus -->
+        </div>
+
+        <!-- Сообщение об ошибке -->
+        <div class="error-message" id="errorMessage" style="display: none;">
+            <p>Не удалось загрузить меню. Пожалуйста, попробуйте позже.</p>
+            <button class="retry-btn" onclick="loadMenuItems()">Попробовать снова</button>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>© 2026 Restik. Все права защищены.</p>
+</footer>
+
+<script src="menu.js"></script>
+</body>
+</html>
