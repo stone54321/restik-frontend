@@ -1,5 +1,5 @@
 // Конфигурация Directus
-const DIRECTUS_URL = 'https://finite-ken-correction-operate.trycloudflare.com'; // 🔥 Убраны пробелы!
+const DIRECTUS_URL = 'https://finite-ken-correction-operate.trycloudflare.com';
 const MENU_ENDPOINT = '/items/menu_items';
 
 // Глобальная переменная для хранения всех блюд

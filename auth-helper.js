@@ -8,17 +8,7 @@ let isLoggingOut = false;
 // ⚙️ НАСТРОЙКИ (КОНФИГ)
 // ============================================
 
-/**
- * 🔥 ВАЖНО: Функция возвращает адрес твоего бэкенда.
- *
- * ДЛЯ ЛОКАЛЬНОЙ РАЗРАБОТКИ:
- *   Оставь как есть: 'http://localhost:8055'
- *
- * ДЛЯ ПУБЛИКАЦИИ (Vercel/Netlify + Cloudflare Tunnel):
- *   1. Запусти cloudflared и скопируй публичную ссылку (вида ...trycloudflare.com)
- *   2. Замени строку ниже на эту ссылку:
- *      return 'https://твоя-ссылка-от-cloudflare.trycloudflare.com';
- */
+
 function getApiUrl() {
     // === МЕНЯТЬ СТРОКУ НИЖЕ ПРИ ДЕПЛОЕ ===
     return 'https://finite-ken-correction-operate.trycloudflare.com';

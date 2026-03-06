@@ -9,8 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const errorText = document.getElementById('errorText');
     const successText = document.getElementById('successText');
 
-    // 🔥 УБРАЛИ автоматический редирект при загрузке!
-    // Не проверяем токен здесь - это вызывает цикл редиректов
 
     // Обработка отправки формы
     loginForm.addEventListener('submit', async function(e) {
