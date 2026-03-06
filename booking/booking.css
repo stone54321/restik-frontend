@@ -493,33 +493,33 @@
     #booking {
         padding: 1em;
     }
-    
+
     .booking-section {
         padding: 20px;
     }
-    
+
     .datetime-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .tables-container {
         grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
     }
-    
+
     .table {
         width: 60px;
         height: 60px;
     }
-    
+
     .summary-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .legend {
         flex-direction: column;
         gap: 10px;
     }
-    
+
     .menu-grid {
         grid-template-columns: 1fr;
     }
