@@ -1,4 +1,4 @@
-const DIRECTUS_URL = 'https://css-cia-synthetic-dir.trycloudflare.com';
+const DIRECTUS_URL = 'https://qualifications-essay-spotlight-sheriff.trycloudflare.com';
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('📄 Login page loaded');

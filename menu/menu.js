@@ -1,5 +1,5 @@
 // Конфигурация Directus
-const DIRECTUS_URL = 'https://css-cia-synthetic-dir.trycloudflare.com';
+const DIRECTUS_URL = 'https://qualifications-essay-spotlight-sheriff.trycloudflare.com';
 const MENU_ENDPOINT = '/items/menu_items';
 
 // Глобальная переменная для хранения всех блюд

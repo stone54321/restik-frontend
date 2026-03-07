@@ -11,7 +11,7 @@ let isLoggingOut = false;
 
 function getApiUrl() {
     // === МЕНЯТЬ СТРОКУ НИЖЕ ПРИ ДЕПЛОЕ ===
-    return 'https://css-cia-synthetic-dir.trycloudflare.com';
+    return 'https://qualifications-essay-spotlight-sheriff.trycloudflare.com';
     // =====================================
 }
 
