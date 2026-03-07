@@ -11,7 +11,7 @@ let isLoggingOut = false;
 
 function getApiUrl() {
     // === МЕНЯТЬ СТРОКУ НИЖЕ ПРИ ДЕПЛОЕ ===
-    return 'https://restrict-rapids-andale-maintains.trycloudflare.com';
+    return 'https://fit-occurs-cannon-drainage.trycloudflare.com';
     // =====================================
 }
 
