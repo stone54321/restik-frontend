@@ -11,7 +11,7 @@ let isLoggingOut = false;
 
 function getApiUrl() {
     // === МЕНЯТЬ СТРОКУ НИЖЕ ПРИ ДЕПЛОЕ ===
-    return 'https://fit-occurs-cannon-drainage.trycloudflare.com';
+    return 'https://css-cia-synthetic-dir.trycloudflare.com';
     // =====================================
 }
 

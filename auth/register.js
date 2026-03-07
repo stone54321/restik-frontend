@@ -1,5 +1,5 @@
-const DIRECTUS_URL = 'https://fit-occurs-cannon-drainage.trycloudflare.com';
-const REGISTER_WEBHOOK = 'https://fit-occurs-cannon-drainage.trycloudflare.com/flows/trigger/fcc8ea87-f310-4fe8-8701-c146628edfa4';
+const DIRECTUS_URL = 'https://css-cia-synthetic-dir.trycloudflare.com';
+const REGISTER_WEBHOOK = 'https://css-cia-synthetic-dir.trycloudflare.com/flows/trigger/fcc8ea87-f310-4fe8-8701-c146628edfa4';
 
 document.addEventListener('DOMContentLoaded', function() {
     const registerForm = document.getElementById('registerForm');

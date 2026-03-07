@@ -1,4 +1,4 @@
-const DIRECTUS_URL = 'https://fit-occurs-cannon-drainage.trycloudflare.com';
+const DIRECTUS_URL = 'https://css-cia-synthetic-dir.trycloudflare.com';
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('📄 Login page loaded');

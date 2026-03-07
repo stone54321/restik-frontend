@@ -1,5 +1,5 @@
 // Конфигурация Directus
-const DIRECTUS_URL = 'https://fit-occurs-cannon-drainage.trycloudflare.com';
+const DIRECTUS_URL = 'https://css-cia-synthetic-dir.trycloudflare.com';
 const MENU_ENDPOINT = '/items/menu_items';
 
 // Глобальная переменная для хранения всех блюд
