@@ -1,5 +1,5 @@
 // Конфигурация Directus
-const DIRECTUS_URL = 'https://ind-announcement-viewers-dramatically.trycloudflare.com';
+const DIRECTUS_URL = 'https://restrict-rapids-andale-maintains.trycloudflare.com';
 
 // Глобальные переменные
 let currentUser = null;

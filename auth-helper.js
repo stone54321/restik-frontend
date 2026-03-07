@@ -11,7 +11,7 @@ let isLoggingOut = false;
 
 function getApiUrl() {
     // === МЕНЯТЬ СТРОКУ НИЖЕ ПРИ ДЕПЛОЕ ===
-    return 'https://ind-announcement-viewers-dramatically.trycloudflare.com';
+    return 'https://restrict-rapids-andale-maintains.trycloudflare.com';
     // =====================================
 }
 
