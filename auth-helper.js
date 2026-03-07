@@ -11,7 +11,7 @@ let isLoggingOut = false;
 
 function getApiUrl() {
     // === МЕНЯТЬ СТРОКУ НИЖЕ ПРИ ДЕПЛОЕ ===
-    return 'https://finite-ken-correction-operate.trycloudflare.com';
+    return 'https://ind-announcement-viewers-dramatically.trycloudflare.com';
     // =====================================
 }
 

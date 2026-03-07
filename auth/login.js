@@ -1,4 +1,4 @@
-const DIRECTUS_URL = 'https://finite-ken-correction-operate.trycloudflare.com';
+const DIRECTUS_URL = 'https://ind-announcement-viewers-dramatically.trycloudflare.com';
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('📄 Login page loaded');
