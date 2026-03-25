@@ -1,5 +1,5 @@
 // Конфигурация Directus
-const DIRECTUS_URL = 'https://qualifications-essay-spotlight-sheriff.trycloudflare.com';
+const DIRECTUS_URL = 'https://pregnant-kai-analog-limitation.trycloudflare.com';
 const MENU_ENDPOINT = '/items/menu_items';
 const TABLES_ENDPOINT = '/items/tables';
 const RESERVATIONS_ENDPOINT = '/items/reservations';
@@ -27,10 +27,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         updateAuthLinks();
     }
 
-    // 🔥 Проверяем авторизацию
-    if (typeof isAuthenticated === 'function' && !isAuthenticated()) {
-        showAuthRequiredMessage();
-        return;
+    //  Проверяем авторизацию (асинхронно!)
+    if (typeof isAuthenticated === 'function') {
+        const authenticated = await isAuthenticated();
+        if (!authenticated) {
+            showAuthRequiredMessage();
+            return;
+        }
     }
 
     initializeBooking();
@@ -89,6 +92,15 @@ function showAuthRequiredMessage() {
 // ============================================
 
 async function initializeBooking() {
+    //  Проверяем авторизацию перед загрузкой данных
+    if (typeof isAuthenticated === 'function') {
+        const authenticated = await isAuthenticated();
+        if (!authenticated) {
+            showAuthRequiredMessage();
+            return;
+        }
+    }
+
     const loading = document.getElementById('loading');
     const container = document.getElementById('bookingContainer');
     const errorMessage = document.getElementById('errorMessage');
@@ -302,7 +314,7 @@ async function loadTables() {
 
     } catch (error) {
         console.error('❌ Ошибка загрузки столиков:', error);
-        throw error; // 🔥 Не используем демо — выбрасываем ошибку
+        throw error;
     }
 }
 
@@ -341,21 +353,18 @@ function renderTables() {
     });
 }
 
-// 🔥 РЕАЛЬНАЯ проверка доступности (не рандом!)
-// 🔥 Проверка доступности с правильным форматом времени
-// 🔥 Проверка доступности с ПОЛНЫМ сбросом состояния
-// 🔥 ОТЛАДОЧНАЯ версия проверки доступности
+
 async function updateTablesAvailability() {
     if (!selectedDate || !selectedTime) return;
 
-    console.log(`\n🔍 ========== ПРОВЕРКА: ${selectedDate} ${selectedTime} ==========`);
+    console.log(`\n ========== ПРОВЕРКА: ${selectedDate} ${selectedTime} ==========`);
 
     try {
         const token = typeof getAuthToken === 'function' ? getAuthToken() : null;
         const headers = { 'Content-Type': 'application/json' };
         if (token) headers['Authorization'] = `Bearer ${token}`;
 
-        // 🔥 ПРОСТОЙ ЗАПРОС: получаем ВСЕ брони (без фильтра)
+        //  ПРОСТОЙ ЗАПРОС: получаем ВСЕ брони (без фильтра)
         console.log('📡 Запрашиваем ВСЕ брони...');
         const response = await fetch(
             `${DIRECTUS_URL}${RESERVATIONS_ENDPOINT}?fields=date,time,table,status`,
@@ -373,7 +382,7 @@ async function updateTablesAvailability() {
                 console.log('📋 Пример записи:', allReservations[0]);
             }
 
-            // 🔥 ФИЛЬТРУЕМ НА КЛИЕНТЕ
+            //  ФИЛЬТРУЕМ НА КЛИЕНТЕ
             bookedTableIds = allReservations
                 .filter(r => {
                     // Нормализуем время для сравнения
@@ -585,6 +594,12 @@ function setupEventListeners() {
     const confirmBtn = document.getElementById('confirmBooking');
     if (confirmBtn) {
         confirmBtn.addEventListener('click', confirmBooking);
+    }
+
+    // Кнопка "Попробовать снова"
+    const retryBtn = document.getElementById('retryBtn');
+    if (retryBtn) {
+        retryBtn.addEventListener('click', initializeBooking);
     }
 }
 

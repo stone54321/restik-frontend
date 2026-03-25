@@ -11,7 +11,7 @@ let isLoggingOut = false;
 
 function getApiUrl() {
     // === МЕНЯТЬ СТРОКУ НИЖЕ ПРИ ДЕПЛОЕ ===
-    return 'https://qualifications-essay-spotlight-sheriff.trycloudflare.com';
+    return 'https://pregnant-kai-analog-limitation.trycloudflare.com';
     // =====================================
 }
 

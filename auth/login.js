@@ -1,4 +1,4 @@
-const DIRECTUS_URL = 'https://qualifications-essay-spotlight-sheriff.trycloudflare.com';
+const DIRECTUS_URL = 'https://pregnant-kai-analog-limitation.trycloudflare.com';
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('📄 Login page loaded');
