@@ -266,21 +266,3 @@ echo "window.API_CONFIG = { DIRECTUS_URL: 'http://localhost:8055' };" > config.j
 3. Загружайте нужный словарь при инициализации
 
 ---
-
-## 🤝 Контрибьютинг
-
-1. Fork проекта
-2. Создайте ветку `git checkout -b feature/amazing-feature`
-3. Сделайте коммит `git commit -m 'Add amazing feature'`
-4. Запушьте `git push origin feature/amazing-feature`
-5. Откройте Pull Request
-
----
-
-## 📄 Лицензия
-
-Этот проект распространяется под лицензией MIT. Подробности в файле [LICENSE](LICENSE).
-
----
-
-**Сделано с ❤️ для Restik Restaurant**
