@@ -524,19 +524,3 @@
         grid-template-columns: 1fr;
     }
 }
-
-/* Стили для правильного позиционирования футера */
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-.content {
-    flex: 1;
-    padding-top: 80px; /* Отступ под фиксированный navbar */
-}
-
-.footer {
-    margin-top: auto; /* Прижимает футер к низу */
-}

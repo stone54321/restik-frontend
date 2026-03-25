@@ -9,13 +9,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="config/api-config.js"></script>
     <script src="auth-helper.js"></script>
+    <script src="mobile-menu.js"></script>
 </head>
 <body>
 
 <!-- Навбар -->
 <nav class="navbar">
     <div class="logo">Restik</div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">
+        <span class="hamburger"></span>
+    </button>
     <ul class="nav-links">
         <li><a href="menu/menu.html">Меню</a></li>
         <li><a href="#about">О нас</a></li>
