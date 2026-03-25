@@ -1,5 +1,5 @@
-// Конфигурация Directus
-const DIRECTUS_URL = 'https://pregnant-kai-analog-limitation.trycloudflare.com';
+// Импорт конфигурации API
+const DIRECTUS_URL = window.API_CONFIG?.DIRECTUS_URL || 'https://pregnant-kai-analog-limitation.trycloudflare.com';
 
 // Глобальные переменные
 let currentUser = null;

@@ -10,9 +10,8 @@ let isLoggingOut = false;
 
 
 function getApiUrl() {
-    // === МЕНЯТЬ СТРОКУ НИЖЕ ПРИ ДЕПЛОЕ ===
-    return 'https://pregnant-kai-analog-limitation.trycloudflare.com';
-    // =====================================
+    // Используем конфигурацию API или fallback
+    return window.API_CONFIG?.DIRECTUS_URL || 'https://pregnant-kai-analog-limitation.trycloudflare.com';
 }
 
 // ============================================

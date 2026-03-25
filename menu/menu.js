@@ -1,6 +1,6 @@
-// Конфигурация Directus
-const DIRECTUS_URL = 'https://pregnant-kai-analog-limitation.trycloudflare.com';
-const MENU_ENDPOINT = '/items/menu_items';
+// Импорт конфигурации API
+const DIRECTUS_URL = window.API_CONFIG?.DIRECTUS_URL || 'https://pregnant-kai-analog-limitation.trycloudflare.com';
+const MENU_ENDPOINT = window.API_CONFIG?.ENDPOINTS?.MENU_ITEMS || '/items/menu_items';
 
 // Глобальная переменная для хранения всех блюд
 let allMenuItems = [];

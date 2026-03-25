@@ -1,5 +1,6 @@
-const DIRECTUS_URL = 'https://pregnant-kai-analog-limitation.trycloudflare.com';
-const REGISTER_WEBHOOK = 'https://pregnant-kai-analog-limitation.trycloudflare.com/flows/trigger/fcc8ea87-f310-4fe8-8701-c146628edfa4';
+// Импорт конфигурации API
+const DIRECTUS_URL = window.API_CONFIG?.DIRECTUS_URL || 'https://pregnant-kai-analog-limitation.trycloudflare.com';
+const REGISTER_WEBHOOK = `${window.API_CONFIG?.DIRECTUS_URL || 'https://pregnant-kai-analog-limitation.trycloudflare.com'}/flows/trigger/fcc8ea87-f310-4fe8-8701-c146628edfa4`;
 
 document.addEventListener('DOMContentLoaded', function() {
     const registerForm = document.getElementById('registerForm');

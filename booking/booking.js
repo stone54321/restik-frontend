@@ -1,8 +1,8 @@
-// Конфигурация Directus
-const DIRECTUS_URL = 'https://pregnant-kai-analog-limitation.trycloudflare.com';
-const MENU_ENDPOINT = '/items/menu_items';
-const TABLES_ENDPOINT = '/items/tables';
-const RESERVATIONS_ENDPOINT = '/items/reservations';
+// Импорт конфигурации API
+const DIRECTUS_URL = window.API_CONFIG?.DIRECTUS_URL || 'https://pregnant-kai-analog-limitation.trycloudflare.com';
+const MENU_ENDPOINT = window.API_CONFIG?.ENDPOINTS?.MENU_ITEMS || '/items/menu_items';
+const TABLES_ENDPOINT = window.API_CONFIG?.ENDPOINTS?.TABLES || '/items/tables';
+const RESERVATIONS_ENDPOINT = window.API_CONFIG?.ENDPOINTS?.RESERVATIONS || '/items/reservations';
 
 // Глобальные переменные
 let selectedDate = null;
