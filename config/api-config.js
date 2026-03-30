@@ -3,7 +3,7 @@
 
 const API_CONFIG = {
     // Основной URL Directus API
-    DIRECTUS_URL: 'https://pregnant-kai-analog-limitation.trycloudflare.com',
+    DIRECTUS_URL: 'https://court-organic-description-motorola.trycloudflare.com',
     
     // Эндпоинты
     ENDPOINTS: {
